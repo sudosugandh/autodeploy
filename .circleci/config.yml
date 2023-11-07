@@ -130,6 +130,7 @@ jobs:
           name: Analyse frontend
           command: |
             cd frontend
+            npm audit fix
             npm install
             npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
@@ -153,7 +154,7 @@ jobs:
             npm update mkdirp --depth 6
             npm install --save-dev webpack@5.73.0
             npm audit fix --audit-level=critical --force
-            npm audit fix
+           
             npm audit --audit-level=critical
       # - slack/notify:
       #     event: fail
